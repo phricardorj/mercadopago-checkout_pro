@@ -9,7 +9,8 @@ Integration with Mercado Pago Checkout Pro to receive payment for orders
 - [moment-timezone](https://www.npmjs.com/package/moment-timezone): Plugin for handling time zones using the Moment.js library.
 - [pg](https://www.npmjs.com/package/pg): PostgreSQL client for Node.js.
 
-## Development Dependencies
+## Development
+- [Docker](https://www.docker.com/)
 - [nodemon](https://www.npmjs.com/package/nodemon): Monitors file changes and automatically restarts the Node.js server during development.
 
 ### Doc
