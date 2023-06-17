@@ -28,6 +28,7 @@ const createPreference = async (orderNumber) => {
     const checkoutLink = response.body.init_point;
     return checkoutLink;
   } catch (error) {
+    console.log(error);
     throw new Error(`Erro ao criar preferência. ${error}`);
   }
 };
