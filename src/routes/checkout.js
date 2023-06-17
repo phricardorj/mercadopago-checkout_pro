@@ -3,11 +3,8 @@ import { pool } from "../configuration/configuration.js";
 import createPreference from "../utils/mercadoPago.js";
 import generateOrderNumber from "../utils/order.js";
 import moment from "moment";
-import "moment-timezone";
-const router = Router();
 
-// Definir o fuso horário para Brasília
-moment.tz.setDefault("America/Sao_Paulo");
+const router = Router();
 
 router.post("/", async (req, res) => {
   try {

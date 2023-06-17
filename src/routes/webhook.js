@@ -2,12 +2,8 @@ import { Router } from "express";
 import { pool } from "../configuration/configuration.js";
 import mercadopago from "mercadopago";
 import moment from "moment";
-import "moment-timezone";
 
 const router = Router();
-
-// Definir o fuso horário para Brasília
-moment.tz.setDefault("America/Sao_Paulo");
 
 router.post("/", async (req, res) => {
   try {
