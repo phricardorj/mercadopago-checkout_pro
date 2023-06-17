@@ -1,8 +1,14 @@
+import moment from "moment";
+import "moment-timezone";
+
+// Definir o fuso horário para Brasília
+moment.tz.setDefault("America/Sao_Paulo");
+
 function generateOrderNumber() {
-  const currentDate = new Date();
-  const year = currentDate.getFullYear();
-  const month = currentDate.getMonth() + 1;
-  const day = currentDate.getDate();
+  const currentDate = moment();
+  const year = currentDate.year();
+  const month = currentDate.month() + 1;
+  const day = currentDate.date();
   const orderNumber = Number(
     `${year}${padZero(month)}${padZero(day)}${generateRandomNumber(8)}`
   );
