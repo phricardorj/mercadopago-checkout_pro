@@ -1,14 +1,8 @@
 import mercadopago from "mercadopago";
 
-const createPreference = async (orderNumber) => {
+const createPreference = async (orderNumber, items) => {
   const preference = {
-    items: [
-      {
-        title: "Exemplo de Produto",
-        unit_price: 1,
-        quantity: 1,
-      },
-    ],
+    items,
     back_urls: {
       success: "https://phricardo.com.br/success",
       failure: "https://phricardo.com.br/failure",
