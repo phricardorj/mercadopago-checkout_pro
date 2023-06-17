@@ -18,7 +18,7 @@ router.post("/", async (req, res) => {
         payment["data.id"]
       );
 
-      const orderNumber = response.external_reference;
+      const orderNumber = Number(response.external_reference);
       const status = response.status;
       const status_detail = response.status_detail;
       const date_created = moment().format("DD/MM/YYYY HH:mm:ss");

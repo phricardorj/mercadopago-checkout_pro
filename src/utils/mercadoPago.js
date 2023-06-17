@@ -15,7 +15,7 @@ const createPreference = async (orderNumber) => {
       pending: "https://phricardo.com.br/pending",
     },
     auto_return: "approved",
-    external_reference: orderNumber,
+    external_reference: orderNumber.toString(),
     statement_descriptor: "Descrição do Produto",
     installments: 12,
     default_payment_method_id: null,
