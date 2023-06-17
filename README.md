@@ -1,6 +1,17 @@
 # 🤝 Mercado Pago
 Integration with Mercado Pago Checkout Pro to receive payment for orders
 
+## Used Technologies
+- [dotenv](https://www.npmjs.com/package/dotenv): Loads environment variables from a `.env` file.
+- [express](https://expressjs.com/): Fast, flexible, and minimalist web framework for Node.js.
+- [mercadopago](https://www.npmjs.com/package/mercadopago): Official Mercado Pago library for payment integration.
+- [moment](https://www.npmjs.com/package/moment): Library for manipulating and formatting dates and times.
+- [moment-timezone](https://www.npmjs.com/package/moment-timezone): Plugin for handling time zones using the Moment.js library.
+- [pg](https://www.npmjs.com/package/pg): PostgreSQL client for Node.js.
+
+## Development Dependencies
+- [nodemon](https://www.npmjs.com/package/nodemon): Monitors file changes and automatically restarts the Node.js server during development.
+
 ### Doc
 
 ``[POST] /checkout`` - Request payload
