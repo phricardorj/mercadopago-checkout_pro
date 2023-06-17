@@ -28,6 +28,13 @@ Integration with Mercado Pago Checkout Pro to receive payment for orders
 docker-compose up -d
 ````
 
+### Environment variables
+````
+ACCESS_TOKEN=[You can get it at Mercado Pago Developers]
+DB_CONNECTION_STRING=[Your Postgres database url]
+NOTIFICATION_URL=[https://your_api_host.com.br/webhook]
+````
+
 ## 🖖 Author<br>
 <table>
   <tr>
