@@ -2,6 +2,7 @@
 Integration with Mercado Pago Checkout Pro to receive payment for orders
 
 ## Used Technologies
+- [swagger](https://swagger.io/): Documenting Rest API with Swagger
 - [dotenv](https://www.npmjs.com/package/dotenv): Loads environment variables from a `.env` file.
 - [express](https://expressjs.com/): Fast, flexible, and minimalist web framework for Node.js.
 - [mercadopago](https://www.npmjs.com/package/mercadopago): Official Mercado Pago library for payment integration.
