@@ -1,7 +1,7 @@
-import { pool } from "../configuration/configuration.js";
+import { POOL } from "../configuration/configuration.js";
 
 // Etapa 1: Conexão com o PostgreSQL e criação das tabelas
-pool.connect((err, client, done) => {
+POOL.connect((err, client, done) => {
   if (err) {
     console.error("Erro ao conectar ao PostgreSQL:", err);
   } else {

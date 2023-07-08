@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { pool } from "../configuration/configuration.js";
+import { POOL } from "../configuration/configuration.js";
 import mercadopago from "mercadopago";
 import moment from "moment";
 
@@ -19,7 +19,7 @@ router.post("/", async (req, res) => {
       const status_detail = response.status_detail;
       const date_created = moment().format("DD/MM/YYYY HH:mm:ss");
 
-      pool.query(
+      POOL.query(
         "UPDATE orders SET status = $1, status_detail = $2, date = $3 WHERE orderNumber = $4",
         [status, status_detail, date_created, orderNumber],
         (error, results) => {

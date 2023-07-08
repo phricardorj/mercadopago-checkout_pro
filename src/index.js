@@ -1,5 +1,5 @@
 import express from "express";
-import { port } from "./configuration/configuration.js";
+import { PORT } from "./configuration/configuration.js";
 import "./database/database.js";
 import checkoutRouter from "./routes/checkout.js";
 import webhookRouter from "./routes/webhook.js";
@@ -14,6 +14,6 @@ app.use(express.json());
 app.use("/checkout", checkoutRouter);
 app.use("/webhook", webhookRouter);
 
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log(`Server started successfully`);
 });

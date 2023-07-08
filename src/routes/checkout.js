@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { pool } from "../configuration/configuration.js";
+import { POOL } from "../configuration/configuration.js";
 import createPreference from "../utils/mercadoPago.js";
 import generateOrderNumber from "../utils/order.js";
 import moment from "moment";
@@ -40,7 +40,7 @@ router.post("/", async (req, res) => {
     const objectResponse = { link: checkoutLink };
 
     // Salvar o checkoutLink no PostgreSQL
-    pool.query(
+    POOL.query(
       "INSERT INTO orders (orderNumber, username, email,  status, status_detail, date) VALUES ($1, $2, $3, $4, $5, $6)",
       [orderNumber, username, email, status, status_detail, date],
       (error, results) => {

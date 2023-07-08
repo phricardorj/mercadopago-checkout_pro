@@ -5,7 +5,7 @@ import mercadopago from "mercadopago";
 dotenv.config();
 
 const { Pool } = pg;
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
 const DB_CONNECTION_STRING =
   process.env.DB_CONNECTION_STRING ||
@@ -17,8 +17,8 @@ mercadopago.configure({
 });
 
 // Conexão com Banco de Dados
-const pool = new Pool({
+const POOL = new Pool({
   connectionString: DB_CONNECTION_STRING,
 });
 
-export { pool, port };
+export { POOL, PORT };
