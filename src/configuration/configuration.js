@@ -7,7 +7,9 @@ dotenv.config();
 const { Pool } = pg;
 const port = process.env.PORT || 3000;
 const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
-const secret_key = process.env.CRYPTO_SECRET_KEY || "secret_localhost";
+const DB_CONNECTION_STRING =
+  process.env.DB_CONNECTION_STRING ||
+  "postgresql://postgres:postgres@localhost:5432/payment_db";
 
 // Configuração do Mercado Pago
 mercadopago.configure({
@@ -16,7 +18,7 @@ mercadopago.configure({
 
 // Conexão com Banco de Dados
 const pool = new Pool({
-  connectionString: process.env.DB_CONNECTION_STRING,
+  connectionString: DB_CONNECTION_STRING,
 });
 
-export { pool, port, secret_key };
+export { pool, port };
