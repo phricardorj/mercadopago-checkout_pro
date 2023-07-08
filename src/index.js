@@ -5,33 +5,19 @@ import checkoutRouter from "./routes/checkout.js";
 import webhookRouter from "./routes/webhook.js";
 import moment from "moment";
 import "moment-timezone";
-import swaggerJsdoc from "swagger-jsdoc";
-import swaggerUi from "swagger-ui-express";
-import swaggerDocument from "./swagger.js";
+import { setupSwagger } from "./setupSwagger.js";
 
-// Defining time zone for Brasilia Standard
+// Definindo o fuso horário para o padrão de Brasília
 moment.tz.setDefault("America/Sao_Paulo");
 
 const app = express();
+const swagger = setupSwagger();
+swagger.setup(app);
+
 app.use(express.json());
 app.use("/checkout", checkoutRouter);
 app.use("/webhook", webhookRouter);
 
-// Configuring the Swagger route
-const options = {
-  swaggerDefinition: swaggerDocument,
-  apis: ["./routes/*.js"],
-};
-const swaggerSpec = swaggerJsdoc(options);
-app.use("/swagger-ui", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-app.get("/api-docs", (req, res) => {
-  res.setHeader("Content-Type", "application/json");
-  res.send(swaggerSpec);
-});
-app.use(({ originalUrl }, res, next) =>
-  originalUrl === "/" ? res.redirect("/swagger-ui") : next()
-);
-
 app.listen(PORT, () => {
-  console.log(`Server started successfully`);
+  console.log(`Servidor iniciado com sucesso`);
 });
