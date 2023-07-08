@@ -23,9 +23,13 @@ const options = {
   apis: ["./routes/*.js"],
 };
 const swaggerSpec = swaggerJsdoc(options);
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use("/swagger-ui", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.get("/api-docs", (req, res) => {
+  res.setHeader("Content-Type", "application/json");
+  res.send(swaggerSpec);
+});
 app.use(({ originalUrl }, res, next) =>
-  originalUrl === "/" ? res.redirect("/api-docs") : next()
+  originalUrl === "/" ? res.redirect("/swagger-ui") : next()
 );
 
 app.listen(PORT, () => {
