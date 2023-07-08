@@ -15,7 +15,9 @@
     "mercadopago": "^1.5.16",
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.43",
-    "pg": "^8.11.0"
+    "pg": "^8.11.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"
